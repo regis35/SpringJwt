@@ -1,0 +1,11 @@
+### Request to create a token
+
+POST localhost:8090/my-api/token
+Authorization: Basic cmVnaXM6c2VjcmV0
+Content-Type: application/json
+
+> {% client.global.set("auth_token", response.body.token); %}
+
+### Simple request
+GET localhost:8090/my-api/
+Authorization: Bearer {{auth_token}}
