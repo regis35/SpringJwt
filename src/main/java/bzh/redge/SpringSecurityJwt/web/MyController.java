@@ -10,7 +10,7 @@ public class MyController {
 
     @GetMapping
     public String home(Principal principal) {
-        return "Jwt application "+principal.getName();
+        return STR."Jwt application \{principal.getName()}";
     }
 
 }

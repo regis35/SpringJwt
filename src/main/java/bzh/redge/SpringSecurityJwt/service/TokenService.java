@@ -1,5 +1,6 @@
 package bzh.redge.SpringSecurityJwt.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,10 +15,10 @@ import java.time.temporal.TemporalUnit;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class TokenService {
 
-    @Autowired
-    private JwtEncoder jwtEncoder;
+    private final JwtEncoder jwtEncoder;
 
     public String generateToken(Authentication auth) {
         Instant now = Instant.now();
